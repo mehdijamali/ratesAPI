@@ -61,7 +61,13 @@ const getAllRates = (request, response) => {
     );
   }
 };
-
+/**
+ /**
+ *  returns the dta of direct and indirect linked between origin and destinations
+ * and returns an empty value (JSON null) for days on which there are less than 3 prices in total.
+ * @param {*} request
+ * @param {*} response
+ */
 const getAllNullRates = (request, response) => {
   const { date_from, date_to, origin, destination } = request.query;
   const PRICE_COUNT_LIMIT = 2;
@@ -108,7 +114,11 @@ const getAllNullRates = (request, response) => {
     );
   }
 };
-
+/**
+ * uploads a new price into the DB
+ * @param {*} request
+ * @param {*} response
+ */
 const createPrice = (request, response) => {
   const {
     date_from,
@@ -180,6 +190,11 @@ const createPrice = (request, response) => {
   }
 };
 // FREE API DOES NOT WORK
+/**
+ * converst the price to USD and uploads it into the DB
+ * @param {*} request
+ * @param {*} response
+ */
 const createConvertedPrice = (request, response) => {
   const {
     date_from,
