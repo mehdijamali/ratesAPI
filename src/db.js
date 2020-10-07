@@ -212,7 +212,7 @@ const createConvertedPrice = (request, response) => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        if (data.error)
+        if (data.response)
           createPrice(
             {
               ...request,
