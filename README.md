@@ -1,12 +1,12 @@
 # Rates API
 
-IS a HTTP API that provides freight prices data between two regions and for the specific time period.
+IS an HTTP API that provides freight price data between two regions and for a specific period.
 
 ## Endpoints
 
 #### GET /rates
 
-expects the following paramters:
+expects the following parameters:
 
 - date_from
 - date_to
@@ -17,7 +17,7 @@ and returns a list with the average prices for each day on a route between port 
 
 #### GET /rates_null
 
-expect to recive the same paramters of /rates endpoint but it returns an empty value (JSON null) for days
+expect to receive the same parameters of /rates endpoint but it returns an empty value (JSON null) for days
 on which there are less than 3 prices in total.
 
 ### POST /upload_price
@@ -41,13 +41,13 @@ uploads a price into DB by receiving the following parameters:
 - price
 - currency
 
-and converts the price value to USD from the curreny code provided in the currency paramter
+and converts the price value to USD from the currency code provided in the currency parameter
 
 - Note that it does not do the conversion now since the free version of https://openexchangerates.org/ API does not support conversion.
 
 ## Usage
 
-First install the npm dependencies after cloning the ropository:
+First, install the npm dependencies after cloning the repository:
 
 ```sh
    npm install
