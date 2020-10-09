@@ -45,6 +45,12 @@ and converts the price value to USD from the currency code provided in the curre
 
 - Note that it does not do the conversion now since the free version of https://openexchangerates.org/ API does not support conversion.
 
+### Batch Processing
+
+Although bulk loading of data can be simply done by utilizing the COPY command and explicit locking inside Postgres, the more correct and efficient way considering the performance and scalability concerns might be using systems such as Apache Spark which supports Batch processing of the data in a faster manner and linking to the third-party storage providers such as Amazon S3.
+
+Another solution could be by using NewSQL services such as Citus that is an extension to Postgres that distributes data and queries in a cluster of multiple machines and Supports both horizontal and vertical scaling.
+
 ## Usage
 
 First, install the npm dependencies after cloning the repository:
